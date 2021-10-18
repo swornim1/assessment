@@ -119,7 +119,6 @@ class P2{
      * The function can be re written as −2x_ix_0 − 2y_iy_0 + (x^2 + y^2 − r^2)+ (x^2 + y^2). For minimizing F, we will have to 
      * solve the linear least squares system A [x_0 y_0 x_0^2 + y_0^2 -r^2]^T. This function solves the least squares system and 
      * returns x_0, y_0 and r for Gauss Newton Algorithm
-     * @returns {boolean} if the perturbation is very small returns false 
      */
     getInitial()
     {
