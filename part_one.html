@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="circle.js"></script>
+    <script type="text/javascript" src="square.js"></script>
+    <script type="text/javascript" src="grid.js"></script>
+    <script type="text/javascript" src="p1.js"></script>
+</head>
+<body>
+    
+    <div id="container"></div>
+        <!-- Buttons for Navigation -->
+        <button class = "button" id = "resetButton">Reset</button>
+        <button class = "button" id = "homeButton" onclick=" window.location = './index.html'">Home</button>
+        <button class = "button" id = "part2Button" onclick=" window.location = './part_two.html'">Part2</button>
+
+
+        <script>
+        // Creates part1 and appends to the screen
+        var partOne = new p1();
+        var ct = document.getElementById('container');
+        ct.appendChild(partOne.returnSvg());
+
+        // Reset Button
+        var button = document.getElementById("resetButton");
+        button.addEventListener("click", function(event)
+        {
+            ct.removeChild(partOne.returnSvg());
+            partOne = new p1();
+            ct.appendChild(partOne.returnSvg());
+        });    
+        </script> 
+        
+
+    
+</body>
+</html>

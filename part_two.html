@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="circle.js"></script>
+    <script type="text/javascript" src="square.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+    <script type="text/javascript" src="p2.js"></script>
+    <script type="text/javascript" src="grid.js"></script>
+</head>
+<body>
+    
+    <div id="container"></div>
+    <button class = "button" id = "resetButton">Reset</button>
+    <button class = "button" id = "generateButton">Generate</button>
+    <button class = "button" id = "homeButton" onclick=" window.location = './index.html'">Home</button>
+    <button class = "button" id = "part1Button" onclick=" window.location = './part_one.html'">Part1</button>
+    <script>
+        
+        var grid = new P2(300,300);
+        var ct = document.getElementById('container');
+        ct.appendChild(grid.returnSvg());
+        
+
+        var generateButton = document.getElementById("generateButton");
+        generateButton.addEventListener("click", function(event)
+        {
+            grid.click();
+        });    
+
+        var resetButton = document.getElementById("resetButton");
+        resetButton.addEventListener("click", function(event)
+        {
+            ct.removeChild(grid.returnSvg());
+            grid = new P2();
+            ct.appendChild(grid.returnSvg());
+        });    
+
+
+    </script> 
+        
+</body>
+</html>
